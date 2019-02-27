@@ -1,8 +1,8 @@
 <template>
   <div>
     <table>
-       <tr v-for="blog in blogs" :key='blog'>
-        <td>{{blog.title}}</td>
+       <tr v-for="blog in blogs" >
+         <td>{{blog.Title}}</td>
        </tr>
     </table>
   </div>
@@ -17,7 +17,6 @@
       }
     },
     mounted () {
-      alert(1)
       this.$http.get('api/Home/GetVueList').then((response) => {
         console.info(response.body)
         this.blogs = response.body.blogs

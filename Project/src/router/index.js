@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import SayHi from '@/components/SayHi'
 import Hello from '@/components/Hello'
 import HelloWorld from '@/components/HelloWorld'
-import BlogList from '@/components/BlogList'
+import BlogsList from '@/components/BlogList'
 
 Vue.use(Router)
 
@@ -25,9 +25,9 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/blogsList',
+      path: '/blog_List',
       name: 'BlogList',
-      component: BlogList
+      component: BlogsList
     }
   ]
 })
