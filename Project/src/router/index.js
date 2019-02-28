@@ -4,6 +4,7 @@ import SayHi from '@/components/SayHi'
 import Hello from '@/components/Hello'
 import HelloWorld from '@/components/HelloWorld'
 import BlogsList from '@/components/BlogList'
+import Blog from '@/components/Blog'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/blog_List',
       name: 'BlogList',
       component: BlogsList
+    },
+    {
+      path: '/blog',
+      name: 'Blog',
+      component: Blog
     }
   ]
 })
