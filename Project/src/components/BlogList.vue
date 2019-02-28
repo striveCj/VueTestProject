@@ -2,7 +2,7 @@
   <div>
     <table>
        <tr v-for="blog in blogs" >
-         <td @click="show_blog(blog.id)">{{blog.Title}}</td>
+         <td @click="show_blog(blog.Id)">{{blog.Title}}</td>
        </tr>
     </table>
   </div>
@@ -18,6 +18,7 @@
     },
     methods: {
       show_blog: function (blog_id) {
+        console.log(blog_id)
         this.$router.push({ name: 'Blog', query: { id: blog_id } })
       }
     }

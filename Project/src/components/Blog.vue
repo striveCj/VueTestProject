@@ -1,10 +1,10 @@
 <template>
   <div>
     <div>
-      <p>标题： </p>
-      <p>发布于： </p>
+      <p>标题：{{blog.title}} </p>
+      <p>发布于：{{blog.published_at}} </p>
       <div>
-
+        {{blog.body}}
       </div>
     </div>
   </div>
