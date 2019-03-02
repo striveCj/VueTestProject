@@ -5,6 +5,7 @@ import Hello from '@/components/Hello'
 import HelloWorld from '@/components/HelloWorld'
 import BlogsList from '@/components/BlogList'
 import Blog from '@/components/Blog'
+import TwoWayBinding from '@/components/TwoWayBinding'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/blog',
       name: 'Blog',
       component: Blog
+    },
+    {
+      path: '/twoWayBinding',
+      name: 'TwoWayBinding',
+      component: TwoWayBinding
     }
   ]
 })

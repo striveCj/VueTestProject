@@ -3,10 +3,10 @@
     <table>
        <tr v-for="blog in blogs" >
          <td>
-         <router-link :to="{name:'Blog',query:{id:blog.Id}}">
-
-         </router-link>
-         {{blog.Title}}</td>
+           <router-link :to="{name:'Blog',query:{id:blog.Id}}">
+             {{blog.Title}}
+           </router-link>
+        </td>
        </tr>
     </table>
   </div>

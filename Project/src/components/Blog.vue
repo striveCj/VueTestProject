@@ -18,13 +18,16 @@
     },
     mounted () {
       this.$http.get('api/Home/GetVueDetail?id=' + this.$route.query.id).then((response) => {
-        this.blog = response.body.result
+        this.blog = response.body.result 
       }, (response) => {
         console.error(response)
         })
     }
   }
 </script>
-<style>
-
+<style scoped>
+  p{
+    font-size:15px;
+    color:rebeccapurple;
+  }
 </style>
