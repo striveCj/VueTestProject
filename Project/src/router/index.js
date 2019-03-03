@@ -6,6 +6,7 @@ import HelloWorld from '@/components/HelloWorld'
 import BlogsList from '@/components/BlogList'
 import Blog from '@/components/Blog'
 import TwoWayBinding from '@/components/TwoWayBinding'
+import FormInput from '@/components/FormInput'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/twoWayBinding',
       name: 'TwoWayBinding',
       component: TwoWayBinding
+    },
+    {
+      path: '/form_input',
+      name: 'FormInput',
+      component: FormInput
     }
   ]
 })
