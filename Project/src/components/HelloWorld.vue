@@ -1,5 +1,9 @@
 <template>
   <div class="hello">
+    <my-logo title="我的标题1" :title2="title">
+
+    </my-logo>
+    <input type="button" @click="change_title" value="单击修改标题" />
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -84,13 +88,24 @@
 </template>
 
 <script>
+  import MyLogo from '@/components/Logo'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      title: '博客列表'
+
     }
-  }
+    },
+    components: {
+      MyLogo: MyLogo
+    },
+    methods: {
+      change_title: function () {
+        this.title="好多文章"
+      }
+    }
 }
 </script>
 
