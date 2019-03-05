@@ -103,7 +103,7 @@ export default {
     },
     methods: {
       change_title: function () {
-        this.title="好多文章"
+        this.title="好多文章 " 
       }
     }
 }
