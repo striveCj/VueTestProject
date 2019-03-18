@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>这个页面是二号页面</h1>
+    {{points}}
     <hr />
     <input type="button" @click="increase" value="点击增加1" /><br />
     <router-link :to="{name:'ShowCounter1'}">
