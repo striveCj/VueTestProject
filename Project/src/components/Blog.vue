@@ -1,3 +1,9 @@
+<style lang="sass">
+  div{
+    border-bottom:1px solid grey;
+  }
+</style>
+
 <template>
   <div>
     <div>
