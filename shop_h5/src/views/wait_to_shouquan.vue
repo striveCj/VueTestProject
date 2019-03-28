@@ -9,7 +9,7 @@
     created() {
       window.location.href=this.$store.state.web_share+"/auth/wechat"
     },
-    components{
+    components:{
 
     }
   }
