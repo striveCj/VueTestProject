@@ -6,3 +6,30 @@ import toast from './modules/toast'
 import countdown from './modules/countdown'
 import products from './modules/products'
 import shopping_car from './modules/shopping_car'
+
+import * as actions from './actions'
+import * as getters from './getters'
+
+Vue.use(Vuex)
+Vue.config.debug = true
+
+const debug = process.env.NODE_ENV !== 'production'
+export default new Vuex.Store({
+  state: {
+    web_share: 'http://shopweb.siwei.me',
+    h5_share:'http://shoph5.siwei.me/?#'
+  },
+  actions,
+  getters,
+  modules: {
+    products,
+    shopping_car,
+    userInfo,
+    tabbar,
+    toast,
+    countdown
+  },
+  strict: debug,
+  middlewares:debug?[]:[]
+})
+
