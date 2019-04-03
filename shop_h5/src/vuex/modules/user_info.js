@@ -67,9 +67,19 @@ const actions = {
       localStorage.setItem('BASEINFO', JSON.stringify(data))
       commit(SET_BASEINFO, data)
     } else {
-      if (localStprage.getItem('BASEINFO')) {
-       
+      if (localStorage.getItem('BASEINFO')) {
+        data = JSON.parse(localStorage.getItem('BASEINFO'))
+        commit(SET_BASEINFO, data)
+      } else {
+        
       }
     }
   }
+}
+
+export default {
+  state,
+  mutations,
+  actions,
+  getters
 }

@@ -1,0 +1,2 @@
+export const SET_BASEINFO = 'SET_BASEINFO'
+export const GET_BASEINFO='GET_BASEINFO'
