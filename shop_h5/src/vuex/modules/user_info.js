@@ -48,5 +48,28 @@ const getters = {
       console.info('没有数据')
     }
     return user_info
+  },
+  [COMMEN_ROLE]: state => {
+    if (state.role === 'yonghu') {
+      return true
+    } else {
+      return false
+    }
+  }
+
+
+}
+
+const actions = {
+  [SET_BASEINFO]({ commit, state }, data) {
+    if (data !== undefined) {
+      let localStorage = window.localStorage
+      localStorage.setItem('BASEINFO', JSON.stringify(data))
+      commit(SET_BASEINFO, data)
+    } else {
+      if (localStprage.getItem('BASEINFO')) {
+       
+      }
+    }
   }
 }
