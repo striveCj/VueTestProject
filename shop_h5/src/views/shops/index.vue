@@ -28,6 +28,34 @@
   import SpecialMarket from '../../components/SpecialMarket.vue'
   import NavBottomView from '../../components/NavBottom.vue'
   export default {
-
+    data() {
+      return {
+        goods: [],
+        is_shops_index:true
+      }
+    },
+    components: {
+      HomeHeaderView,
+      HomeBannerView,
+      HomeNavView,
+      HomeMainView,
+      SpecialMarket,
+      NavBottomView
+    },
+    mounted() {
+      scrollPic()
+      this.loadPage()
+    },
+    computed: {}
+    , methods: {
+      loadPage() {
+        this.$http.get(this.$configs.api + 'goods/get_goods').then(response)=> {
+          console.info(response.body)
+          this.goods = response.body.goods
+        }, (error) => {
+          console.error(error)
+        }
+      }
+    }
   }
 </script>
