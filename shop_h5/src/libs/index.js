@@ -37,4 +37,44 @@ function scrollPic() {
     imgBox.style.transition = "all .3s ease 0s";
     imgBox.style.webkitTransition = "all .3s ease 0s";
   }
+
+  function removeTransition() {
+    imgBox.style.transition = "none";
+    imgBox.style.webkitTransition = "none";
+  }
+
+  function setTransfrom(t) {
+    imgBox.style.transform = 'translateX(' + t + 'px)';
+    imgBox.style.webkitTransform = 'translateX(' + t + 'px)';
+
+  }
+
+  pointBox.children[0].className = "now";
+  for (var i = 0; i < ols.length; i++) {
+    ols[i].index = i;//获得当前第几个小li的索引号
+    ols[i].onmouseover = function() {
+      for (var j=0;j<pls.length;j++) {
+        ols[j].className = "";
+      }
+      this.className = "now";
+      setTransfrom(-indexx * width);
+      square = indexx;
+    }
+  }
+  timer = setInterval(function() {
+      indexx++;
+      addTransition();
+      setTransfrom(-indexx * width);
+
+      square++;
+      if (square > ols.length - 1) {
+        square = 0;
+      }
+      for (var i = 0; i < ols.length; i++) {
+        ols[i].className = "";
+
+      }
+      ols[square].className = "now";
+    },
+    3000);
 }
