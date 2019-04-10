@@ -32,4 +32,9 @@ function scrollPic() {
   var endX = 0;
   var startX = 0;
   var square = 0;
+
+  function addTransition() {
+    imgBox.style.transition = "all .3s ease 0s";
+    imgBox.style.webkitTransition = "all .3s ease 0s";
+  }
 }
