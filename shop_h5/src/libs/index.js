@@ -61,9 +61,9 @@ function scrollPic() {
       square = indexx;
     }
   }
-  timer = setInterval(function() {
+  timer = setInterval(function() { 
       indexx++;
-      addTransition();
+      addTransition(); 
       setTransfrom(-indexx * width);
 
       square++;
