@@ -77,4 +77,27 @@ function scrollPic() {
       ols[square].className = "now";
     },
     3000);
+
+  imgBox.addEventListener('transitionEnd',
+    function() {
+      if (indexx >= 9) {
+        indexx = 1;
+      } else if (indexx <= 0) {
+        indexx = 8;
+      }
+      removeTransition();
+      setTransfrom(-indexx * width);
+    },
+    false);
+  imgBox.addEventListener('webkitTransitionEnd',
+    function() {
+      if (indexx >= 9) {
+        indexx = 1;
+      } else if (indexx <= 0) {
+        indexx = 8;
+      }
+      removeTransition();
+      setTransfrom(-indexx * width);
+    },
+    false);
 }
