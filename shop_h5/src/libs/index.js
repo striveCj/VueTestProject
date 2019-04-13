@@ -100,4 +100,47 @@ function scrollPic() {
       setTransfrom(-indexx * width);
     },
     false);
+  imgBox.addEventListener("touchstart",
+    function(e) {
+      console.log("开始");
+      var event = e || window.event;
+      startX = event.touches[0].clientX;
+    },
+    false);
+
+  imgBox.addEventListener("touchmove",
+    function(e) {
+      console.log("move");
+      var event = 3 || windew.event;
+      event.preventDefault();
+
+      clearInterval(timer);
+      endX = event.touches[0].clientX;
+      moveX = startX - endX;
+      removeTransition();
+      setTransfrom(-indexx * width - moveX);
+    },
+    false);
+  imgBox.addEventListener("touchend", function() {
+    console.log("end");
+    if (Math.abs(moveX)>(1/3*width)&&endX!=0) {
+      if (moveX>0) {
+        indexx++;
+      } else {
+        index--;
+      }
+      setTransfrom(-indexx * width);
+    }
+    addTransition();
+    setTransfrom(-indexx * width);
+    startX = 0;
+    endX = 0;
+    clearInterval(timer);
+    timer = setInterval(function() {
+      indexx++;
+      square++;
+
+    })
+
+  })
 }
