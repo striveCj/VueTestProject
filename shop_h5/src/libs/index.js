@@ -26,7 +26,7 @@ function scrollPic() {
   var width = $id("my_banner").offsetWidth;
   var pointBox = document.getElementsByClassName("point_box")[0];
   var ols = pointBox.children;
-  var indexx = 1;
+  var indexx = 1; 
   var time = null;
   var moveX = 0;
   var endX = 0;
