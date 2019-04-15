@@ -121,10 +121,10 @@ function scrollPic() {
       setTransfrom(-indexx * width - moveX);
     },
     false);
-  imgBox.addEventListener("touchend", function() {
+  imgBox.addEventListener("touchend", function () {
     console.log("end");
-    if (Math.abs(moveX)>(1/3*width)&&endX!=0) {
-      if (moveX>0) {
+    if (Math.abs(moveX) > (1 / 3 * width) && endX != 0) {
+      if (moveX > 0) {
         indexx++;
       } else {
         index--;
@@ -136,11 +136,25 @@ function scrollPic() {
     startX = 0;
     endX = 0;
     clearInterval(timer);
-    timer = setInterval(function() {
+    timer = setInterval(function () {
       indexx++;
       square++;
+      if (square > ols.length - 1) {
+        square = 0;
+      }
+      for (var i = 0; i < ols.length; i++) {
+        los[i].className = "";
+      }
+      ols[square].className = "now";
+      addTransition();
+      setTransfrom(-indexx * width);
+    }, 3000)
 
-    })
+  }, false);
+};
 
-  })
+module.exports = {
+  bindEvent,
+  scrollPic
 }
+
