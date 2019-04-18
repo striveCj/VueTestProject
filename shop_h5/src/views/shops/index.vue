@@ -27,6 +27,7 @@
   import HomeNavView from '../../components/HomeNav.vue'
   import SpecialMarket from '../../components/SpecialMarket.vue'
   import NavBottomView from '../../components/NavBottom.vue'
+
   export default {
     data() {
       return {
@@ -49,12 +50,12 @@
     computed: {}
     , methods: {
       loadPage() {
-        this.$http.get(this.$configs.api + 'goods/get_goods').then(response)=> {
+        this.$http.get(this.$configs.api + 'goods/get_goods').then((response)=> {
           console.info(response.body)
           this.goods = response.body.goods
         }, (error) => {
           console.error(error)
-        }
+        })
       }
     }
   }
