@@ -3,7 +3,7 @@
       <div class="goods_detail"  style="height: 100%">
         <header class="goods_detail">
           <a href="" class="icon_back" onclick="window.history.go(-1)"></a>
-          <h3>赏评详情</h3>
+          <h3>商品详情</h3>
         </header>
         <div class="tast_list_bd" style="padding-top:44px;">
           <main class="detail_box">
@@ -21,6 +21,20 @@
                 </ul>
               </div>
             </div>
+            <section class="product_info clearfix">
+              <div class="product_left">
+                <p class="product_name">
+
+                </p>
+                <div class="product_pric">
+                  <span>￥</span>
+                  <span class="rel_price"></span>
+                  <span></span>
+                  <span style="color:gray;text-decoration:line-through;font-size:18px;margin-left:14px;">原价：￥</span>
+                </div>
+              </div>
+            </section>
+
           </main>
         </div>
       </div>
