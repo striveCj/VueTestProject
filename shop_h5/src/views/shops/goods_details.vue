@@ -76,8 +76,42 @@
 </template>
 
 <script>
+  import {go} from '../../libs/router'
+  import {scrollPic} from '../../libs/index.js'
     export default {
-        name: "goods_details"
+        data(){
+          return{
+            good_images:[],
+            good:"",
+            buy_count:1,
+            good_id:this.$route.query.good_id
+          }
+        },
+      watch:{},
+      mounted(){
+          scrollPic();
+          this.$http.get(this.$configs.api+'goods/goods_details?good_id='+this.good_id).then((response)=>{
+            console.info(this.good_id)
+            console.info(response.body)
+            this.good=response.body.good
+            this.good_images=response.body.good_images
+          },(error)=>{
+            console.error(error)
+          });
+      },
+      methods:{
+          addToCart(){
+            alert("商品已经加入到了购物车")
+            let goods={
+              id:this.good_id,
+              title:this.good.name,
+              quantity:this.buy_count,
+              price:this.good.price,
+              image:this.good_images[0]
+            }
+            this.$store.dispatch('addToCart',goods)
+          }
+      }
     }
 </script>
 
