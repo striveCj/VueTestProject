@@ -93,7 +93,6 @@
           this.$http.get(this.$configs.api+'goods/goods_details?good_id='+this.good_id).then((response)=>{
             console.info(this.good_id)
             console.info(response.body)
-            console.info(response.body)
             this.good=response.body.good
             this.good_images=response.body.good_images
           },(error)=>{
@@ -111,8 +110,24 @@
               image:this.good_images[0]
             }
             this.$store.dispatch('addToCart',goods)
+          },
+        toCart(){
+          go("/cart",this.$router)
+        },
+        plus(){
+          this.buy_count=this.buy+1
+        },
+        minus(){
+          if (this.buy_count>1){
+            this.buy_count=this.buy_count-1
           }
-      }
+        },
+        zhifu(){
+          go("/shops/dingdanzhifu?good_id="+this.good_id+"&buy_count="+this.buy_count,this.$route)
+        }
+      },
+     components:{},
+      computed:{}
     }
 </script>
 
