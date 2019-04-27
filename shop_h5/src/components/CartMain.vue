@@ -32,9 +32,42 @@
             </div>
             <div class="cart_product_sell">
               <span class="product_money">￥<strong class="real_money"></strong></span>
+              <div class="cart_add clearfix"><span @click="minus(item.id)" class="my_item">-</span>
+                <input type="tel" :value="item.quantity" class="my_count">
+                <span class="my_add" @click="add(item.id)"></span>
+              </div>
             </div>
+
           </div>
         </div>
+      </div>
+      <div class="pop" style="display: none;">
+        <div class="pop_box">
+          <div class="del_info">
+            确定要删除该商品吗？
+          </div>
+          <div class="del_cancel">
+            取消
+          </div>
+          <div class="del_ok" @click="deleteItem">
+            确定
+          </div>
+        </div>
+      </div>
+      <div class="cart_fo">
+        <footer class="acrt footer">
+          <div class="count_money_box">
+            <div class="heji">
+              <strong>合计：</strong>
+              <strong style="color: #ff621a; font-size: 18px;">
+                \{\{total|cyrrency}}
+              </strong>
+            </div>
+          </div>
+          <a :disabled="!products.length" @click="checkout(products)" class="go_pay">
+            <span style="color: #f5f5f5;font-weight: 600;">结算</span>
+          </a>
+        </footer>
       </div>
     </main>
 </template>
