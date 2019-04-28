@@ -73,8 +73,35 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
+  import  {go} from '../libs/router'
+  import {check,animatDelBox} from '../assets/js/cart.js'
     export default {
-        name: "CartMain.vue"
+        data(){
+          return{
+            need_delete_item:{},
+            cartDatas:[ ],
+          }
+        },
+      mounted() {
+          check();
+          animatDelBox();
+      },
+      computed:{
+          ...mapGetters({
+            products: 'cartProducts',
+            checkoutStatus:'checkoutStatus'
+          }),
+        total(){
+            return this.products.reduce((total,item)=>{
+              return total + item.price*item.quantity
+            },0)
+        }
+      },methods:{
+          checkout(products){
+
+          }
+      }
     }
 </script>
 
