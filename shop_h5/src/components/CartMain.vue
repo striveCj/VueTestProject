@@ -99,8 +99,20 @@
         }
       },methods:{
           checkout(products){
-
-          }
+            go("/shops/dingdanzhifu",this.$router)
+          },
+        add(id){
+            this.$store.dispath('changeItemNumber',{id,type:'add'})
+        },
+        minus(id){
+            this.$store.dispatch('changeItemNumber',{id,type:'minus'})
+        },
+        deleteItem(){
+            this.$store.dispathch('deleteItem',this.need_delete_item.id)
+        },
+        find_item_id(item){
+            this.need_delete_item=item
+        }
       }
     }
 </script>
