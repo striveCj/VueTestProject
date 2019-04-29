@@ -7,3 +7,12 @@ export const  addToCart=({commit},product)=>{
     price:product.price
   })
 }
+export const  deleteItem={commit},id)=>{
+  commit(types.DELETE_ITEM)
+}
+
+export const changeItemNumber=({commin},{id,type})=>{
+   commit(type.CHANGE_ONE_QUANTITY,{
+
+  })
+}
