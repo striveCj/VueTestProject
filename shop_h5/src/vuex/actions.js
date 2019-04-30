@@ -13,6 +13,7 @@ export const  deleteItem={commit},id)=>{
 
 export const changeItemNumber=({commin},{id,type})=>{
    commit(type.CHANGE_ONE_QUANTITY,{
-
+    id:parseInt(id),
+     type
   })
 }
