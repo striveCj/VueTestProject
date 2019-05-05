@@ -31,6 +31,45 @@
                 </p>
               </div>
             </form>
+            <span class="divider"></span>
+            <section class="product_info clearfix" v-if="single_pay">
+              <div>
+                <div class="fu_li_zhuan_qu">
+                  <img :src="good_images[0]"  class="log_image">
+                  <div class="content">
+                    <div class="title">
+
+                    </div>
+                    <div class="logo_and_shop_name">
+                      <div class="product_pric">
+                        <span>￥</span>
+                        <span class="rel_pric"></span>
+                        <span>$nbsp x</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="product_info clearfix" v-else v-for="product in cartProducts">
+              <div>
+                <div class="fu_li_zhuan_qu">
+                  <img :src="product.image"  class="log_image">
+                  <div class="content">
+                    <div class="title">
+
+                    </div>
+                    <div class="logo_and_shop_name">
+                      <div class="product_pric">
+                        <span>￥</span>
+                        <span class="rel_pric"></span>
+                        <span>$nbsp x</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </main>
         </div>
       </div>
