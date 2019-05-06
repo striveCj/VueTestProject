@@ -70,6 +70,20 @@
                 </div>
               </div>
             </section>
+
+            <section>
+              <span class="divider" style="height: 15px;"></span>
+              <div class="extra_cost" style="">
+                <span style="float: left;margin-left: 15px">应付金额：</span>
+                <div class="rel_price" type="text" name="cost" style="border:0;background-color: white;font-size: 20px;color: #ff621a;font-weight: bold;outline: none;text-align: right;padding-right: 20px;">
+                  \{\{total_cost|currency}}
+                </div>
+                <div v-else class="rel_price" type="text" name="cost" style="border:0;background-color: white;font-size: 20px;color: #ff621a;font-weight: bold;outline: none;text-align: right;padding-right: 20px;">
+                  \{\{total|currency}}
+
+                </div>
+              </div>
+            </section>
           </main>
         </div>
       </div>
