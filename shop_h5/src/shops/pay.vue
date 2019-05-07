@@ -91,10 +91,16 @@
               <div style="margin-top: 10px;">
                 <img src="../..assets/微信icon@3x.png" style="width: 35px;">
               </div>
-              <span style=" ">微信支付</span>
+              <span style="margin-top: 8px;font-size:18px;line-height: 40px;margin-left: 10px;">微信支付</span>
+            </div>
+            <div style="padding: 14px 10px;" @click="user_wechat">
+              <img src="../..assets/选中 3x.png" style="width: 28px;" alt="">
             </div>
           </div>
         </div>
+      </div>
+      <div class="shop_layout-scroll-absolute" style="">
+        <div class="queding" @click="buy">立即支付</div>
       </div>
     </div>
 </template>
