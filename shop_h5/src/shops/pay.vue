@@ -85,6 +85,15 @@
               </div>
             </section>
           </main>
+          <span class="divider"></span>
+          <div style="height: 55px;display: flex;width: 100%;padding: 0px 10px;background-color: #fff;" @click="">
+            <div style="flex: 1;display: flex;">
+              <div style="margin-top: 10px;">
+                <img src="../..assets/微信icon@3x.png" style="width: 35px;">
+              </div>
+              <span style=" ">微信支付</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
