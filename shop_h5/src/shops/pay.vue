@@ -106,8 +106,58 @@
 </template>
 
 <script>
+  import {go} from '../../libs/router'
+  import {mapGetters} from 'vuex'
     export default {
-        name: "pay"
+    data(){
+      return{
+        good_images:[],
+        good:"",
+        buy_count:this.$route.query.buy_count,
+        good_id:this.$route.query.good_id,
+        open_id:this.$route.state.userInfo.open_id,
+        mobile_user_address:'',
+        mobile_user_phone:'',
+        mobile_user_name:'',
+        guest_remarks:'',
+        is_use_wechat:false
+      }
+    },
+      watch:{
+
+      },
+      mounted(){
+      if (this.single_pay) {
+        this.$http.get(this.$configs.api+'goods/goods_details?good_id='+this.good_id).then((response)=>{
+          console.info(this.good_id)
+          console.info(response.body)
+          this.good=response.body.goodthis.good_images=response.body.good_images
+        },(error)=>{
+          console.error(error)
+        });
+      }
+      },
+      computed:{
+      total(){
+        return this.carProducts.reduce((total,p)=>{
+          return(total+p.price=p.quantity)
+        },0)
+      },
+        single_pay(){
+        return this.good_id&&this.buy_count
+        },
+        total_cost(){
+        return this.good.price*this.buy_count
+        },
+        ...mapGetters({
+          cartProducts:'cartProucts',
+          checkoutStatus:'checkoutStatus'
+        })
+      },
+      methods:{
+
+      }
+
     }
 </script>
 
