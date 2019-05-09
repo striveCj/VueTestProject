@@ -155,7 +155,38 @@
         })
       },
       methods:{
+        validateBeforeSubmit(){
+          return new Promise((resolve, reject) => {
+            this.$validator.validateAll().then(resolve=>{
+              console.info(result)
+              if (result){
+                console.info("=============表单验证成功====")
+                resolve(true)
+              } else  {
+                alert("请填写完整的收货信息")
+                resolve(false)
+              }
+            });
+          })
+        },
+        plus(){
+          this.buy_count=this.buy_count+1
+        },
+        minus(){
+          if (this.buy_count>1) {
+            this.buy_count=this.buy_count-1
+          }
+        },
+        user_wechat(){
+          if (this.is_use_wechat===false){
+            this.is_use_wechat=true
+          } else  {
+            this.is_use_wechat=false
+          }
+        },
+        buy(){
 
+        }
       }
 
     }
