@@ -185,7 +185,43 @@
           }
         },
         buy(){
-
+          let result=this.validateBeforeSubmit().then((resolve)=>{
+            if (resolve) {
+              console.info('true====')
+              let params
+              if (this.single_pay){
+                params={
+                  good_id: this.good_id,
+                  buy_count:this.buy_count,
+                  total_cost:this.total_cost,
+                  guest_remarks: this.guest_remarks,
+                  mobile_user_address: this.mobile_user_address,
+                  mobile_user_name: this.mobile_user_name,
+                  mobile_user_phone: this.mobile_user_phone,
+                  open_id: this.open_id
+                }
+              }else {
+                console.info(this.total)
+                params={
+                  good_id: this.good_id,
+                  total_cost:this.total_cost,
+                  guest_remarks: this.guest_remarks,
+                  mobile_user_address: this.mobile_user_address,
+                  mobile_user_name: this.mobile_user_name,
+                  mobile_user_phone: this.mobile_user_phone,
+                  open_id: this.open_id
+                }
+              }
+              this.$http.post(this.$configs.api+'goods/buy',params).then((response)=>{
+                let order_number=response.body.order_number
+                this.purchase(order_number)
+              },(error)=>{
+                console.error(error)
+              });
+            }else {
+              console.info('==请填写完整的收货信息')
+            }
+          })
         }
       }
 
