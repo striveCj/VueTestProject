@@ -247,7 +247,27 @@
             open_id:this.$store.state.userInfo.open_id,
             total_cost:total_cost,
             order_number:order_number
-          }).then(
+          }).then((response)=>{
+            WeixinJSBridge.invoke(
+              'getBrandWCPayRequest',{
+                "appId":response.data.appId,
+                "timeStamp":response.data.timeStamp,
+                "nonceStr":response.data.nonceStr,
+                "package":response.data.package,
+                "signType":response.data.sginType,
+                "paySign":response.data.paySign
+              },
+              function(res){
+                if (res.err_msg=="get_brand_wcpay_request:ok") {
+                  that.$router.push({
+                    path:'/shops/paysuccess?order_id='+order_number
+                  });
+                }
+              },(error)=>{
+                console.error(error);
+              }
+            )
+            }
 
           )
         }
